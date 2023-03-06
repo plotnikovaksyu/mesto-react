@@ -1,6 +1,8 @@
 .grid__image {
     height: 282px;
     max-width: 282px;
+    cursor: pointer;
+    object-fit: cover;
 }
 
 .grid__image:hover {

@@ -14,7 +14,7 @@
 
 **GitHub Pages**
 
-* [Ссылка на  проект в GitHub Pages]()
+* [Ссылка на  проект в GitHub Pages](https://plotnikovaksyu.github.io/mesto-react/index.html)
 
 
 **Технологии**

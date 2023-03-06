@@ -11,6 +11,7 @@
     height: 50px;
     /* margin-top: 48px; */
     margin-top: 23px;
+    cursor: pointer;
 }
 
 .popup__submit-button:hover {

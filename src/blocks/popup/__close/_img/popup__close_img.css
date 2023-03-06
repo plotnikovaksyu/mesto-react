@@ -1,3 +1,4 @@
 .popup__close_img {
-    position: absolute;   
+    position: absolute;
+    cursor: pointer;  
 }

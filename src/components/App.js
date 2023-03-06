@@ -45,19 +45,20 @@ function App() {
                 buttonText="Сохранить"
                 state="disabled"
                 isOpen={isEditProfilePopupOpen}
-                onClose={closeAllPopups}
-                children={
-                    <>
-                        <input className="popup__input popup__input_name" id="input-name" type="text" name="name" required
-                            placeholder="Жак-Ив Кусто" minLength="2" maxLength="40" />
-                        <span id="input-name-error" className="popup__text-error"></span>
-                        <input className="popup__input popup__input_discription" id="input-discription" type="text"
-                            name="about" required placeholder="Исследователь океана" minLength="2"
-                            maxLength="200" />
-                        <span id="input-discription-error" className="popup__text-error"></span>
-                    </>
-                }
-            />
+                onClose={closeAllPopups}>
+                <input className="popup__input popup__input_name" id="input-name" type="text" name="name" required
+                    placeholder="Жак-Ив Кусто" minLength="2" maxLength="40" />
+                <span id="input-name-error" className="popup__text-error"></span>
+                <input className="popup__input popup__input_discription" id="input-discription" type="text"
+                    name="about" required placeholder="Исследователь океана" minLength="2"
+                    maxLength="200" />
+                <span id="input-discription-error" className="popup__text-error"></span>
+            </PopupWithForm>
+
+
+
+
+
             <PopupWithForm
                 name="add"
                 title="Новое место"
@@ -65,18 +66,15 @@ function App() {
                 buttonText="Сохранить"
                 state="disabled"
                 isOpen={isAddPlacePopupOpen}
-                onClose={closeAllPopups}
-                children={
-                    <>
-                        <input className="popup__input popup__input_place" id="input-place" type="text" name="place"
-                            required placeholder="Название" minLength="2" maxLength="30" />
-                        <span id="input-place-error" className="popup__text-error"></span>
-                        <input className="popup__input popup__input_img" id="input-img" type="url" required name="img"
-                            placeholder="Ссылка на картинку" />
-                        <span id="input-img-error" className="popup__text-error"></span>
-                    </>
-                }
-            />
+                onClose={closeAllPopups}>
+                <input className="popup__input popup__input_place" id="input-place" type="text" name="place"
+                    required placeholder="Название" minLength="2" maxLength="30" />
+                <span id="input-place-error" className="popup__text-error"></span>
+                <input className="popup__input popup__input_img" id="input-img" type="url" required name="img"
+                    placeholder="Ссылка на картинку" />
+                <span id="input-img-error" className="popup__text-error"></span>
+            </PopupWithForm>
+
             <PopupWithForm
                 name="avatar"
                 title="Обновить аватар"
@@ -84,15 +82,12 @@ function App() {
                 buttonText="Сохранить"
                 isOpen={isEditAvatarPopupOpen}
                 onClose={closeAllPopups}
-                state="disabled"
-                children={
-                    <>
-                        <input className="popup__input popup__input_avatar" id="input-avatar" type="url" required
-                            name="avatar" placeholder="Ссылка на аватар" />
-                        <span id="input-avatar-error" className="popup__text-error"></span>
-                    </>
-                }
-            />
+                state="disabled">
+                <input className="popup__input popup__input_avatar" id="input-avatar" type="url" required
+                    name="avatar" placeholder="Ссылка на аватар" />
+                <span id="input-avatar-error" className="popup__text-error"></span>
+            </PopupWithForm>
+
             <PopupWithForm
                 name="checking"
                 title="Вы уверены?"
