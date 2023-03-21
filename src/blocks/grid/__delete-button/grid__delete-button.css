@@ -1,4 +1,5 @@
 .grid__delete-button {
+    visibility: visible;
     background-color: transparent;
     border: none;
     width: 18px;

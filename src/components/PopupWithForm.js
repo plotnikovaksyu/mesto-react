@@ -1,7 +1,6 @@
-// import React, { Children } from 'react';
 import React from 'react';
 
-function PopupWithForm({name, title, children, state, label, buttonText, isOpen, onClose}) {
+function PopupWithForm({ name, title, children, state, label, buttonText, isOpen, onClose, onSubmit }) {
 
 
     return (
@@ -11,12 +10,18 @@ function PopupWithForm({name, title, children, state, label, buttonText, isOpen,
                 </button>
                 <h2 className="popup__title">{title}</h2>
 
-                <form className="popup__form" name={`${name}`} noValidate>
+                {/* <form className="popup__form" name={`${name}`} noValidate onSubmit={onSubmit}> */}
+                <form className="popup__form" name={`${name}`}  onSubmit={onSubmit}>
                     <fieldset className="popup__edit">
                         {children}
-                        <button type="submit"
+                        {/* <button type="submit"
                             className={`popup__submit-button popup__submit-button_${state} popup__submit-button_${name}`} disabled
+                            aria-label={label}>{buttonText}</button> */}
+
+                        <button type="submit"
+                            className={`popup__submit-button  popup__submit-button_${name}`}
                             aria-label={label}>{buttonText}</button>
+
                     </fieldset>
                 </form>
 

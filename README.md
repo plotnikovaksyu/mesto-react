@@ -28,3 +28,9 @@
 :white_check_mark: использован хук состояния React.useState
 
 :white_check_mark: добавлен запрос к API при помощи хука useEffect 
+
+:white_check_mark: задействован контекст
+
+:white_check_mark: взаимодействие с инпутами через управляемые компоненты
+
+:white_check_mark: использован Ref

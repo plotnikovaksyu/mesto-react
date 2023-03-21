@@ -66,11 +66,12 @@ class Api {
             method: 'POST',
             headers: this._headers,
             body: JSON.stringify({
-                name: values.place,
-                link: values.img
-            })
-        })
+               name: values.name,
+               link: values.link
+            }) 
+        }) 
     }
+
 
 
     //поставить лайк

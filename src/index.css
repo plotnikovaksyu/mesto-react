@@ -28,9 +28,11 @@
 @import url('./blocks/grid/__container/grid__container.css');
 @import url('./blocks/grid/__image/grid__image.css');
 @import url('./blocks/grid/__title/grid__title.css');
-@import url('./blocks/grid/__fill/grid__fill.css');
+@import url('./blocks/grid/__like-button/_active/grid__like-button_active.css');
 @import url('./blocks/grid/__list/grid__list.css');
 @import url('./blocks/grid/__counter/griid__counter.css');
+@import url('./blocks/grid/__delete-button/_hidden/grid__delete-button_hidden.css');
+@import url('./blocks/grid/__delete-button/_visible/grid__delete-button_visible.css');
 /* popup */
 @import url('./blocks/popup/popup.css');
 @import url('./blocks/popup/__container/popup__container.css');
