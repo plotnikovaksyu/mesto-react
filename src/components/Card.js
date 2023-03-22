@@ -1,9 +1,9 @@
-import React from 'react';
+import {useContext} from 'react';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function Card({ card, onCardClick, onConfirmDelete, onCardLike}) {
 
-    const currentUser = React.useContext(CurrentUserContext);
+    const currentUser = useContext(CurrentUserContext);
     
     const isOwn = card.owner._id === currentUser._id;
     const isLiked = card.likes.some(i => i._id === currentUser._id);
@@ -14,8 +14,6 @@ function Card({ card, onCardClick, onConfirmDelete, onCardLike}) {
     const cardLikeButtonClassName = (
         `grid__like-button ${isLiked ? 'grid__like-button_active' : " "}`
     )
-
-    
 
     function handleClick() {
         onCardClick(card);
@@ -32,7 +30,6 @@ function Card({ card, onCardClick, onConfirmDelete, onCardLike}) {
     // function handleDeleteClick() {
     //     onCardDelete(card)
     // }
-
 
     return (
         <li className="grid__list">

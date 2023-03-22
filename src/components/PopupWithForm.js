@@ -2,7 +2,6 @@ import React from 'react';
 
 function PopupWithForm({ name, title, children, state, label, buttonText, isOpen, onClose, onSubmit }) {
 
-
     return (
         <section className={`popup popup_${name} ${isOpen ? "popup_is-opened" : " "}`}>
             <div className={`popup__container popup__container_${name}`}>
@@ -24,8 +23,6 @@ function PopupWithForm({ name, title, children, state, label, buttonText, isOpen
 
                     </fieldset>
                 </form>
-
-
             </div>
         </section>
     )

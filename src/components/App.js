@@ -1,8 +1,7 @@
-import React from 'react';
+import {useEffect, useState} from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
 import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
@@ -13,18 +12,18 @@ import { api } from '../utils/api';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function App() {
-    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
-    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-    const [selectedCard, setSelectedCard] = React.useState({});
-    const [isConfirmPopupOpen, setIsConfirmPopupOpen] = React.useState(false);
+    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] =  useState(false);
+    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] =  useState(false);
+    const [selectedCard, setSelectedCard] =  useState({});
+    const [isConfirmPopupOpen, setIsConfirmPopupOpen] =  useState(false);
 
-    const [currentUser, setCurrentUser] = React.useState({});
-    const [cards, setCards] = React.useState([]);
-    const [card, setCard] = React.useState({})
+    const [currentUser, setCurrentUser] =  useState({});
+    const [cards, setCards] =  useState([]);
+    const [card, setCard] =  useState({})
 
     //отрисовать все карточки
-    React.useEffect(() => {
+     useEffect(() => {
         api.getInitialCards()
             .then((cards) => {
                 setCards(cards)
@@ -34,9 +33,8 @@ function App() {
             })
     }, [])
 
-
     //обновить стейт с инфой юзера
-    React.useEffect(() => {
+     useEffect(() => {
         Promise.all([api.getUserData()])
             .then(([data]) => {
                 setCurrentUser(data)
@@ -71,7 +69,6 @@ function App() {
                 })
     }
 
-    
     //удалить карточку
     function handleCardDelete() {
         
@@ -91,7 +88,6 @@ function App() {
         setIsConfirmPopupOpen(true)
     }
 
-
     function closeAllPopups() {
         setIsAddPlacePopupOpen(false)
         setIsEditProfilePopupOpen(false)
@@ -103,7 +99,6 @@ function App() {
     function handleCardClick(card) {
         setSelectedCard(card)
     }
-
 
     //обновить данные профиля
     function handleUpdateUser(data) {
@@ -136,14 +131,13 @@ function App() {
             link: evt.link
         })
             .then((newCard) => {
-                setCards([...cards, newCard]);
+                setCards([newCard, ...cards]);
                 closeAllPopups()
             })
             .catch((err) => {
                 console.log((`${err}`))
             })
     }
-
 
     return (
         <CurrentUserContext.Provider value={currentUser}>
@@ -173,7 +167,6 @@ function App() {
                     onAddPlace={handleAddPlaceSubmit}>
                 </AddPlacePopup>
 
-
                 <EditAvatarPopup
                     isOpen={isEditAvatarPopupOpen}
                     onClose={closeAllPopups}
@@ -181,22 +174,17 @@ function App() {
                 >
                 </EditAvatarPopup>
 
-
                 <ConfirmDeletionPopup
                     onClose={closeAllPopups}
                     isOpen={isConfirmPopupOpen}
                     onConfirmDeletion={handleCardDelete}
-                   
-   
                 >
                 </ConfirmDeletionPopup>
-
 
                 <ImagePopup
                     card={selectedCard}
                     onClose={closeAllPopups}
                 />
-
 
                 <Footer />
 
