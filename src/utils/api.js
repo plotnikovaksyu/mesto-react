@@ -112,4 +112,4 @@ export const api = new Api({
     }
 })
 
-
+export default Api;
